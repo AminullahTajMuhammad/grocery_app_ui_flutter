@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_app/components/product_item.dart';
 import 'package:grocery_app/contants.dart';
+import 'package:grocery_app/see_all_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -277,23 +278,30 @@ class _HomePageState extends State<HomePage> {
                 Positioned(
                   right: 20,
                   top: 8,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          fontFamily: GoogleFonts.poppins().fontFamily,
-                          fontSize: 16,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => SeeAllProducts(),),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'See All',
+                          style: TextStyle(
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                            fontSize: 16,
+                            color: Constants.GREY_COLOR,
+                          ),
+                        ),
+                        Icon(
+                          Icons.keyboard_arrow_right,
                           color: Constants.GREY_COLOR,
                         ),
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Constants.GREY_COLOR,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
