@@ -152,50 +152,138 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
             ),
           ),
         ),
-        Container(
-          margin: EdgeInsets.only(left: 50, top: 30),
-          child: Text(
-            "Amount",
-            style: TextStyle(
-              fontSize: 21,
-              fontFamily: GoogleFonts.poppins().fontFamily,
-              fontWeight: FontWeight.w500,
-              color: Colors.black
-            ),
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(left: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 35,
-                height: 35,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xff707070)
-                ),
-                child: Icon(
-                  Icons.minimize,
-                  color: Colors.white,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 10),
-                child: Text(
-                  "1",
-                  style: TextStyle(
-                    fontSize: 21,
-                    fontFamily: GoogleFonts.poppins().fontFamily,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 20, top: 30),
+                  child: Text(
+                    "Amount",
+                    style: TextStyle(
+                        fontSize: 21,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black
+                    ),
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(left: 15, top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 30,
+                        height: 30,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Color(0xff707070)
+                        ),
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 8),
+                          child: Icon(
+                            Icons.minimize_rounded,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 15, right: 15),
+                        child: Text(
+                          "1",
+                          style: TextStyle(
+                            fontSize: 21,
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Color(0xff08A045),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 35),
+                        child: Text(
+                          "Total Price:",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: GoogleFonts.poppins().fontFamily,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 32, left: 5),
+                        child: Text(
+                          "\$4.2",
+                          style: TextStyle(
+                              fontSize: 23,
+                              fontFamily: GoogleFonts.poppins().fontFamily,
+                              fontWeight: FontWeight.bold,
+                              color: Constants.PRIMARY_COLOR
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: 125,
+                    height: 30,
+                    margin: EdgeInsets.only(top: 5),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        color: Constants.PRIMARY_COLOR
+                    ),
+                    child: Container(
+                      child: Text(
+                        "Add to Cart",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ],
     );
