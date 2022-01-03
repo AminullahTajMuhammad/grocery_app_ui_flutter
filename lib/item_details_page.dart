@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app/add_to_cart_page.dart';
 import 'contants.dart';
 
 class ItemDetailsScreen extends StatefulWidget {
@@ -58,7 +59,6 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 20),
           child: Center(
             child: Image.asset(
               "assets/egg_4.png",
@@ -262,16 +262,21 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                       )
                     ],
                   ),
-                  Container(
-                    width: 125,
-                    height: 30,
-                    margin: EdgeInsets.only(top: 5),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        color: Constants.PRIMARY_COLOR
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => AddToCartPage()
+                      ));
+                    },
                     child: Container(
+                      width: 125,
+                      height: 30,
+                      margin: EdgeInsets.only(top: 5),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          color: Constants.PRIMARY_COLOR
+                      ),
                       child: Text(
                         "Add to Cart",
                         style: TextStyle(
